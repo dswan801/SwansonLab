@@ -1,0 +1,293 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>
+      None
+    </ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7D2A2456-2148-49B7-A044-B9DD9859D41A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>swanson.FilterLab</RootNamespace>
+    <AssemblyName>FilterLab</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\$(Configuration)\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <StartAction>Program</StartAction>
+    <StartProgram>$(ProgramW6432)\Autodesk\Revit 2017\Revit.exe</StartProgram>
+    <StartArguments>/language ENU</StartArguments>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\$(Configuration)\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <StartAction>Program</StartAction>
+    <StartProgram>$(ProgramW6432)\Autodesk\Revit 2017\Revit.exe</StartProgram>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug via Revit Add-In Manager|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug via Revit Add-In Manager\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AdWindows, Version=2015.11.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>$(SolutionDir)packages\Revit-2017.1.1-x64.Base.2.0.0\lib\net452\AdWindows.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="RevitAPI, Version=17.0.0.0, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>$(SolutionDir)packages\Revit-2017.1.1-x64.Base.2.0.0\lib\net452\RevitAPI.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="RevitAPIIFC, Version=17.0.0.0, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>$(SolutionDir)packages\Revit-2017.1.1-x64.Base.2.0.0\lib\net452\RevitAPIIFC.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="RevitAPIMacros, Version=17.0.0.0, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>$(SolutionDir)packages\Revit-2017.1.1-x64.Base.2.0.0\lib\net452\RevitAPIMacros.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="RevitAPIUI, Version=17.0.0.0, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>$(SolutionDir)packages\Revit-2017.1.1-x64.Base.2.0.0\lib\net452\RevitAPIUI.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="RevitAPIUIMacros, Version=17.0.0.0, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>$(SolutionDir)packages\Revit-2017.1.1-x64.Base.2.0.0\lib\net452\RevitAPIUIMacros.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="RevitDevTools, Version=2017.0.0.369, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>$(SolutionDir)packages\Revit2017DevTools.1.7.0\lib\net452\RevitDevTools.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.XML" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="Xamarin.Forms.Core, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Xamarin.Forms.2.3.4.247\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Platform, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Xamarin.Forms.2.3.4.247\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Xaml, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Xamarin.Forms.2.3.4.247\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.Xaml.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AboutBox1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AboutBox1.Designer.cs">
+      <DependentUpon>AboutBox1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AboutCommand.cs" />
+    <Compile Include="ActiveUIDoc.cs" />
+    <Compile Include="ExternalApplication.cs" />
+    <Compile Include="FilterCommand.cs" />
+    <Compile Include="GeomUtils.cs" />
+    <Compile Include="PreSelectionCommand.cs" />
+    <Compile Include="preSelectionUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="preSelectionUI.Designer.cs">
+      <DependentUpon>preSelectionUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="SelectedCommand.cs" />
+    <Compile Include="SelectionUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SelectionUI.Designer.cs">
+      <DependentUpon>SelectionUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SelectionUI2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SelectionUI2.Designer.cs">
+      <DependentUpon>SelectionUI2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SettingsCommand.cs" />
+    <Compile Include="SettingsUI.xaml.cs">
+      <DependentUpon>SettingsUI.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Snoop\CollectorExts\CollectorExt.cs" />
+    <Compile Include="Snoop\CollectorExts\CollectorExtElements.cs" />
+    <Compile Include="Snoop\CollectorExts\DataTypeInfoHelper.cs" />
+    <Compile Include="Snoop\CollectorExts\ElementMethodsStream.cs" />
+    <Compile Include="Snoop\CollectorExts\ElementPropertiesStream.cs" />
+    <Compile Include="Snoop\CollectorExts\ExtensibleStorageEntityContentStream.cs" />
+    <Compile Include="Snoop\CollectorExts\IElementStream.cs" />
+    <Compile Include="Snoop\CollectorExts\SpatialElementStream.cs" />
+    <Compile Include="Snoop\Collectors\Collector.cs" />
+    <Compile Include="Snoop\Collectors\CollectorEventArgs.cs" />
+    <Compile Include="Snoop\Collectors\CollectorObj.cs" />
+    <Compile Include="Snoop\Collectors\CollectorXmlNode.cs" />
+    <Compile Include="Snoop\Data\Angle.cs" />
+    <Compile Include="Snoop\Data\BindingMap.cs" />
+    <Compile Include="Snoop\Data\Bool.cs" />
+    <Compile Include="Snoop\Data\CategoryNameMap.cs" />
+    <Compile Include="Snoop\Data\CategorySeparator.cs" />
+    <Compile Include="Snoop\Data\ClassSeparator.cs" />
+    <Compile Include="Snoop\Data\Data.cs" />
+    <Compile Include="Snoop\Data\Double.cs" />
+    <Compile Include="Snoop\Data\ElementGeometry.cs" />
+    <Compile Include="Snoop\Data\ElementId.cs" />
+    <Compile Include="Snoop\Data\ElementSet.cs" />
+    <Compile Include="Snoop\Data\EmptyValue.cs" />
+    <Compile Include="Snoop\Data\Enumerable.cs" />
+    <Compile Include="Snoop\Data\Exception.cs" />
+    <Compile Include="Snoop\Data\ExtensibleStorageSeparator.cs" />
+    <Compile Include="Snoop\Data\Int.cs" />
+    <Compile Include="Snoop\Data\MemberSeparator.cs" />
+    <Compile Include="Snoop\Data\Object.cs" />
+    <Compile Include="Snoop\Data\ParameterSet.cs" />
+    <Compile Include="Snoop\Data\String.cs" />
+    <Compile Include="Snoop\Data\Uv.cs" />
+    <Compile Include="Snoop\Data\Xml.cs" />
+    <Compile Include="Snoop\Data\Xyz.cs" />
+    <Compile Include="Snoop\Utils.cs" />
+    <Compile Include="Treefort\Utilities.cs" />
+    <Compile Include="WebHelp.cs" />
+    <Compile Include="Xml\Forms\Dom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="AboutBox1.resx">
+      <DependentUpon>AboutBox1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExternalApplication.resx">
+      <DependentUpon>ExternalApplication.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FilterCommand.resx">
+      <DependentUpon>FilterCommand.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SelectionUI.resx">
+      <DependentUpon>SelectionUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SelectionUI2.resx">
+      <DependentUpon>SelectionUI2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Xml\Forms\Dom.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AssemblyResolves.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="License.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="readme.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FilterLab.addin" />
+    <Content Include="Resources\add_button.png" />
+    <Content Include="Resources\Button_image_13.ico" />
+    <Content Include="Resources\Button_image_13.png" />
+    <Content Include="Resources\Button_image_14.png" />
+    <Content Include="Resources\Button_image_16.png" />
+    <Content Include="Resources\Button_image_17.ico" />
+    <Content Include="Resources\Button_image_17.png" />
+    <Content Include="Resources\Button_image_18.png" />
+    <Content Include="Resources\Button_image_19.png" />
+    <Content Include="Resources\Button_image_2.png" />
+    <Content Include="Resources\Button_image_20.png" />
+    <Content Include="Resources\Button_image_21.png" />
+    <Content Include="Resources\Button_image_22.png" />
+    <Content Include="Resources\Button_image_23.png" />
+    <Content Include="Resources\Button_image_24.ico" />
+    <Content Include="Resources\Button_image_24.png" />
+    <Content Include="Resources\Button_image_25.png" />
+    <Content Include="Resources\Button_image_26.png" />
+    <Content Include="Resources\Button_image_27.ico" />
+    <Content Include="Resources\Button_image_27.png" />
+    <Content Include="Resources\Button_image_3.png" />
+    <Content Include="Resources\check_button.png" />
+    <Content Include="Resources\minus_button.png" />
+    <Content Include="Resources\uncheck_button.png" />
+    <Content Include="Resources\Web_image_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Button_image.png" />
+    <None Include="Resources\Button_tooltip_image.png" />
+    <None Include="packages.config" />
+    <None Include="FilterLab.chm" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="SettingsUI.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Snoop\STUFF\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+SET rdt="$(AppData)\Bushman\Revit\2017\RevitDevTools"
+SET p=$(SolutionDir)packages\
+SET a=Revit2017DevTools
+for /D %25%25x in ("%25p%25%25a%25*") do if not defined f set "f=%25%25x"
+SET pa=%25f%25\lib\net452\
+
+IF NOT "$(ConfigurationName)" == "Debug via Revit Add-In Manager" (
+copy /Y "$(ProjectDir)*.addin" "$(AppData)\Autodesk\REVIT\Addins\2017"
+mkdir "$(AppData)\Autodesk\REVIT\Addins\2017\$(ProjectName)\help"
+xcopy /Y /E /R "$(ProjectDir)bin\$(Configuration)\*" "$(AppData)\Autodesk\REVIT\Addins\2017\$(ProjectName)"
+copy /Y "$(ProjectDir)*.chm" "$(AppData)\Autodesk\REVIT\Addins\2017\$(ProjectName)\help"
+
+mkdir %25rdt%25
+
+copy /Y "%25pa%25*" %25rdt%25
+) ELSE (
+copy /Y "%25pa%25*" "$(TargetDir)"
+)</PostBuildEvent>
+  </PropertyGroup>
+  <Import Project="..\packages\Xamarin.Forms.2.3.4.247\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.2.3.4.247\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Xamarin.Forms.2.3.4.247\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Xamarin.Forms.2.3.4.247\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets'))" />
+  </Target>
+</Project>

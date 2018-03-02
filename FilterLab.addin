@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- FilterLab
+     https://revit-addins.blogspot.ru
+     © Swanson Labs, 2018
+	 
+	 The manifest file. -->
+<RevitAddIns>
+  <AddIn Type="Application">
+  	<AddInId>5d32546a-5964-4d06-8e28-edcc723e3786</AddInId>
+    <Name>FilterLab</Name>
+    <Assembly>C:\ProgramData\Autodesk\Revit\Addins\2017\FilterLabs_stuff\FilterLab.dll</Assembly>
+    <FullClassName>swanson.FilterLab.ExternalApplication</FullClassName>
+    <VendorId>SwansonLabsAddIns</VendorId>
+    <VendorDescription>Swanson Labs, https://SwansonLabs.net</VendorDescription>
+  </AddIn>
+</RevitAddIns>
